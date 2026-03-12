@@ -1,4 +1,4 @@
-using UnityEngine;
+  using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerScript : MonoBehaviour
@@ -24,7 +24,7 @@ public class PlayerScript : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         playerInput = GetComponent<PlayerInput>();
         moveSpeed = 2f;
-        jumpForce = 5f;
+        jumpForce = 7f;
 
 	}
 
