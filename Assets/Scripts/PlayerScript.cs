@@ -23,7 +23,7 @@ public class PlayerScript : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         playerInput = GetComponent<PlayerInput>();
-        moveSpeed = 2f;
+        moveSpeed = 3.5f;
         jumpForce = 7f;
 
 	}
@@ -33,6 +33,15 @@ public class PlayerScript : MonoBehaviour
     {
         moveInput = playerInput.actions["Move"].ReadValue<Vector2>();
         horizontalMove = moveSpeed * moveInput.x;
+
+        if (moveInput.x > 0)
+        {
+            transform.localScale = new Vector3(1, 1, 1); // Mirar a la derecha
+        }
+        else if (moveInput.x < 0)
+        {
+            transform.localScale = new Vector3(-1, 1, 1); // Mirar a la izquierda
+		}
 	}
     private void FixedUpdate()
     {
